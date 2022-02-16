@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: html_head(pageTitle='All habits')" />
+<body>
+<div class="container">
+    <div th:replace="fragments :: header"></div>
+
+    <div class="text-center">
+        <h1>HABITS LIST</h1>
+        <p/>
+          <h4><a th:href="@{/habit/new}">Create new habit</a></h4>
+        <p/>
+    </div>
+
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>Habit ID</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+          <tr th:each="habit : ${habits}">
+            <td th:text="${habit.id}">Product ID</td>
+            <td th:text="${habit.description}">description</td>
+            <td>
+                <a th:href="@{'/habits/edit/' + ${habit.id}}">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/habits/delete/' + ${habit.id}}">Delete</a>
+
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    <div><br/><br/></div>
+</div>
+</body>
+</html>

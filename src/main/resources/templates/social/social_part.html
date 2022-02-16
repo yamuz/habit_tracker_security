@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="class-hidden">
+    <!--    TO DO-->
+    <th:text> YOU CAN ALSO USE SOCIAL MEDIA FOR SIGNING IN</th:text>
+
+    <a href="/@{/oauth2/authorization/facebook}"><img src="../static/auth_icons/icons8-facebook-48.png" alt="facebook"
+                                                      style="width:24px;height:24px;"></a>
+
+    <div>
+        <h4><a th:href="@{/oauth2/authorization/google}"></a></h4>
+        <img src="../static/auth_icons/icons8-google-48.png" alt="google" style="width:24px;height:24px;">
+    </div>
+</div>
+</body>
+</html>

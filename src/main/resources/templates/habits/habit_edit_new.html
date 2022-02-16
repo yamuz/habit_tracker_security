@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: html_head(pageTitle='Habit')" />
+
+<body>
+<div class="container">
+  <h1> Habit </h1>
+  <div>
+      <form class="form-horizontal" th:object="${habit}" th:action="@{/habit}" method="post">
+          <input type="hidden" th:field="*{id}"/>
+          <input type="text" th:field ="*{description}"/>
+          <input type="submit" value="Save">
+      </form>
+  </div>
+</div>
+</body>
+
+</html>
